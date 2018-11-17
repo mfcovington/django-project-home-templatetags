@@ -113,3 +113,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# django project
+/db.sqlite3
+/manage.py
+/mysite/
