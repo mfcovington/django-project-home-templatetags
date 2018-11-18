@@ -8,6 +8,7 @@ from django.utils.html import format_html
 
 register = template.Library()
 home_namespace = getattr(settings, 'PROJECT_HOME_NAMESPACE', None)
+home_label = getattr(settings, 'PROJECT_HOME_LABEL', 'Home')
 
 def home_url():
     try:
@@ -24,7 +25,7 @@ def silence_without_namespace(f):
         if label:
             return f(label)
         else:
-            return f()
+            return f(home_label)
     return wrapped
 
 
