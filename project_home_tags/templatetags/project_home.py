@@ -1,9 +1,14 @@
 from functools import wraps
 
 from django import template
+from django import VERSION as DJANGO_VERSION
 from django.conf import settings
-from django.urls import reverse
 from django.utils.html import format_html
+
+if DJANGO_VERSION < (1, 10):
+    from django.core.urlresolvers import reverse
+else:
+    from django.urls import reverse
 
 
 register = template.Library()
