@@ -144,4 +144,4 @@ If ``settings.PROJECT_HOME_NAMESPACE`` is defined as ``'project_name:index_view'
         </ol>
 
 
-*Version 0.0.0*
+*Version 0.1.0*
