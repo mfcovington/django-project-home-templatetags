@@ -3,6 +3,8 @@ from functools import wraps
 from django import template
 from django import VERSION as DJANGO_VERSION
 from django.conf import settings
+from django.core.exceptions import ValidationError
+from django.core.validators import URLValidator
 from django.utils.html import format_html
 
 if DJANGO_VERSION < (1, 10):
@@ -20,10 +22,18 @@ def home_url():
 
     Returns None if PROJECT_HOME_NAMESPACE is not defined in settings.
     """
+    global home_namespace
     try:
         return reverse(home_namespace)
     except Exception:
-        return None
+        try:
+            validate_url = URLValidator()
+            if '://' not in home_namespace:
+                home_namespace = 'http://' + home_namespace
+            validate_url(home_namespace)
+            return(home_namespace)
+        except ValidationError:
+            return None
 
 
 def silence_without_namespace(f):
