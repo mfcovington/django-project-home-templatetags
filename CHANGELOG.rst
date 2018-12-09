@@ -1,6 +1,12 @@
 Revision History
 ================
 
+0.2.1 2018-12-09
+
+- Don't modify `home_namespace` globally
+- Exclude `.pyc` files from distribution
+
+
 0.2.0 2018-12-08
 
 - Allow `settings.PROJECT_HOME_NAMESPACE` to be an actual URL, rather than just an internal namespace
