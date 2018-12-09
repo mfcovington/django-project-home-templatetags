@@ -22,16 +22,16 @@ def home_url():
 
     Returns None if PROJECT_HOME_NAMESPACE is not defined in settings.
     """
-    global home_namespace
     try:
         return reverse(home_namespace)
     except Exception:
+        url = home_namespace
         try:
             validate_url = URLValidator()
-            if '://' not in home_namespace:
-                home_namespace = 'http://' + home_namespace
-            validate_url(home_namespace)
-            return(home_namespace)
+            if '://' not in url:
+                url = 'http://' + url
+            validate_url(url)
+            return(url)
         except ValidationError:
             return None
 

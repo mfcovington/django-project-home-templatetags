@@ -48,6 +48,13 @@ Specify the ``PROJECT_HOME_NAMESPACE`` in ``settings.py``:
     PROJECT_HOME_NAMESPACE = 'project_name:index_view'
 
 
+Rather than using an internal namespace, you can also set ``PROJECT_HOME_NAMESPACE`` to a specific URL:
+
+.. code-block:: python
+
+    PROJECT_HOME_NAMESPACE = 'djangoproject.com'
+
+
 By default, a link created with a ``project_home_tags`` template tag has 'Home' as its text. This can be overridden by defining an optional project-wide label with ``PROJECT_HOME_LABEL`` in ``settings.py``:
 
 .. code-block:: python
@@ -144,4 +151,4 @@ If ``settings.PROJECT_HOME_NAMESPACE`` is defined as ``'project_name:index_view'
         </ol>
 
 
-*Version 0.2.0*
+*Version 0.2.1*
