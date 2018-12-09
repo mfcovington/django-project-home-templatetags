@@ -24,7 +24,7 @@ install_requires = [
 
 setup(
     name='django-project-home-templatetags',
-    version='0.2.0',
+    version='0.2.1',
     packages=['project_home_tags'],
     include_package_data=True,
     license='BSD License',
